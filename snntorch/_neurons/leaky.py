@@ -215,6 +215,7 @@ class Leaky(LIF):
         return base_fn
 
     def _build_state_function(self, input_, mem):
+        state_fn = None
         if self.reset_mechanism_val == 0:  # reset by subtraction
             state_fn = self._base_state_function(
                 input_, mem - self.reset * self.threshold
